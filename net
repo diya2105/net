@@ -1,0 +1,702 @@
+exp -1
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EXP_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a = 10, b = 5;
+            Console.WriteLine("Add={0}", a + b);
+            Console.WriteLine("Sub={0}", a - b);
+            Console.WriteLine("Mul={0}", a * b);
+            Console.WriteLine("Div={0}", a / b);
+            Console.ReadLine();
+
+        }
+    }
+}
+
+
+exp -2
+
+CSE B
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CSE B.aspx.cs" Inherits="EXP_2.CSE_B" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <h1>Welcome to ASP.NET</h1>
+            <ul>
+                <li>.NET</li>
+                <li>ASP.NET</li>
+                <li>WEB APP</li>
+            </ul>
+        </div>
+    </form>
+</body>
+</html>
+
+
+Site.master
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="EXP_2.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/">Home</a></li>
+                        <li><a runat="server" href="~/About">About</a></li>
+                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                       imp**  <li><a runat="server" href="~/CSE B">CSE B</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+            </footer>
+        </div>
+
+    </form>
+</body>
+</html>
+ exp -1
+
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace EXP_1
+{
+    public partial class Form1 : Form
+    {
+        int a, b, c;
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            a = Convert.ToInt32(textBox1.Text);
+            b = Convert.ToInt32(textBox2.Text);
+            c = a + b;
+            textBox3.Text = c.ToString();
+        }
+    }
+}
+
+
+
+exp-2
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace state
+{
+    class Program
+    {
+        static void Main()
+        {
+            // Read the first string (expected to be in uppercase)
+            Console.WriteLine("Enter a string in uppercase: ");
+            string upperString = Console.ReadLine();
+
+            // Read the second string (expected to be in lowercase)
+            Console.WriteLine("Enter a string in lowercase: ");
+            string lowerString = Console.ReadLine();
+
+            // Convert the uppercase string to lowercase
+            string convertedUpperToLower = upperString.ToLower();
+
+            // Convert the lowercase string to uppercase
+            string convertedLowerToUpper = lowerString.ToUpper();
+
+            // Output the converted strings
+            Console.WriteLine($"Converted uppercase to lowercase: {convertedUpperToLower}");
+            Console.WriteLine($"Converted lowercase to uppercase: {convertedLowerToUpper}");
+
+
+            Console.ReadKey();
+        }
+    }
+}
+ using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Calc
+{
+    public partial class Form1 : Form
+    {
+        int m1, m3, m5, m7, x;
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "2";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "3";
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "4";
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "5";
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "7";
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "8";
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "9";
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "0";
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            m1 = Convert.ToInt32(textBox1.Text);
+            textBox1.Clear();
+            x = 1;
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            m3 = Convert.ToInt32(textBox1.Text);
+            textBox1.Clear();
+            x = 2;
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            m5 = Convert.ToInt32(textBox1.Text);
+            textBox1.Clear();
+            x = 3;
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            m7 = Convert.ToInt32(textBox1.Text);
+            textBox1.Clear();
+            x = 4;
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            if(x==1)
+            {
+                String m2 = textBox1.Text;
+                int a = m1 + Convert.ToInt32(m2);
+                textBox1.Text = a.ToString();
+            }
+            else if(x==2)
+            {
+                String m4 = textBox1.Text;
+                int b = m3 - Convert.ToInt32(m4);
+                textBox1.Text = b.ToString();
+            }
+            else if(x==3)
+            {
+                String m6 = textBox1.Text;
+                int c = m5 * Convert.ToInt32(m6);
+                textBox1.Text = c.ToString();
+            }
+            else
+            {
+                String m8 = textBox1.Text;
+                int d = m7/ Convert.ToInt32(m8);
+                textBox1.Text = d.ToString();
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "6";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text + "1";
+        }
+
+    }
+}
+ exp-1
+
+CSE.aspx
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CSE.aspx.cs" Inherits="set_4_exp1.CSE" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <h1>Welcome to ASP</h1>
+            <ul>
+                <li>.NET</li>
+                <li>CSE A</li>
+            </ul>
+        </div>
+    </form>
+</body>
+</html>
+
+Default.aspx
+
+<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="set_4_exp1._Default" %>
+
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+
+    <div class="jumbotron">
+        <h1>ASP.NET</h1>
+        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
+        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        imp ***<p>Link to know about<a href="CSE.aspx">CSEClass</a></p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Getting started</h2>
+            <p>
+                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
+            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
+            </p>
+            <p>
+                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>Get more libraries</h2>
+            <p>
+                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
+            </p>
+            <p>
+                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>Web Hosting</h2>
+            <p>
+                You can easily find a web hosting company that offers the right mix of features and price for your applications.
+            </p>
+            <p>
+                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
+            </p>
+        </div>
+    </div>
+
+</asp:Content>
+
+
+
+SiteMater.aspx
+
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="set_4_exp1.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/">Home</a></li>
+                        <li><a runat="server" href="~/About">About</a></li>
+                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                      imp**  <li><a runat="server" href="~/CSE">CSE</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+            </footer>
+        </div>
+
+    </form>
+</body>
+</html>
+
+
+
+
+
+exp -2
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace set_4_exp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int s = 0;
+            for(int i=1;i<=10;i++)
+            {
+                Console.WriteLine(i);
+                s = s + i;
+            }
+            Console.WriteLine("Sum of numbers={0}", s);
+            Console.ReadLine();
+        }
+    }
+}
+ exp -1
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace set_5_exp_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            program1.displaycollege();
+            program2.displayBranch();
+            program3.displaySection();
+            Console.ReadLine();
+        }
+    }
+    class program1
+    {
+        public static void displaycollege()
+        {
+            Console.WriteLine("This is VVIT");
+        }
+    }
+    class program2
+    {
+        public static void displayBranch()
+        {
+            Console.WriteLine("This is CSE");
+        }
+    }
+    class program3
+    {
+        public static void displaySection()
+        {
+            Console.WriteLine("This is CSE-B section");
+        }
+    }
+
+}
+
+
+exp-2
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace set_5_exp2
+{
+    class car
+    {
+        public car(string brand)
+        {
+            Console.WriteLine("brand: " + brand);
+        }
+        public car(int price)
+        {
+            Console.WriteLine("price:" + price);
+        }
+        static void Main(string[] args)
+        {
+            car C1 = new car("porsche");
+            Console.WriteLine();
+            car c2 = new car(3000000);
+            Console.ReadLine();
+        }
+    }
+}
+ exp -1
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace set_6_exp1
+{
+    public class exp_simple
+    {
+        static exp_simple()
+        {
+            Console.WriteLine("Static");
+        }
+        private exp_simple()
+        {
+            Console.WriteLine("Private");
+        }
+        public static void rresult()
+        {
+            exp_simple es = new exp_simple();
+            exp_simple es1 = new exp_simple();
+        }
+        static void Main(string[] args)
+        {
+            exp_simple.rresult();
+        }
+
+    }
+}
+
+exp-2
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace set_6_exp2
+{
+    class program
+    {
+        void display(string a, string b)
+        {
+            Console.WriteLine("String:" + a);
+            Console.WriteLine("String:" + b);
+        }
+        void method(int a, int b)
+        {
+            Console.WriteLine("Num1:" + a);
+            Console.WriteLine("Num2:" + b);
+        }
+        static void Main(String[] args)
+        {
+            program p1 = new program();
+            p1.display("porsche", "benz");
+            p1.method(100, 200);
+            Console.ReadLine();
+        }
+    }
+}
+ exp-2
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace set_7_exp2
+{
+    class baseclass
+    {
+        public virtual void show()
+        {
+            Console.WriteLine("BaseClass");
+        }
+        class derived : baseclass
+        {
+            public override void show()
+            {
+                Console.WriteLine("derived class");
+
+            }
+        }
+        class ride
+        {
+            public static void Main(String[] args)
+            {
+                baseclass obj;
+                obj = new baseclass();
+                obj.show();
+                obj = new derived();
+                obj.show();
+                Console.ReadLine();
+            }
+        }
+    }
+}
+exp:1
+Oracle and .net integrate to build robust enterprise application by connection .net application to oracle database.using oracle data
+provider for .net,developes data within oracle database directly from .net application 
+program: steps to follow to connect to the oracle database
+prerequistes: oracle database client ensure you have the approprate oracle database client installed on your machine. this client
+provide the necessary components for.net application to interact with oracle database
+installlation: installlation oracle data provider
+install oracle data provider for .net (oop.net)via nuget in visual studio to enable oracle database connectivity code to connect and que
+set up connection 8 in visual studio go to "server explorer">"data connection">"add connection" choose oracle database as the provide
+enter connection detals: inspect the oracle database datasource name(dsn),username and password
+text connection:click "text connection to ensure connectivity
+build and run use c# code to connect and queey the oracle
+code b
+select
+from DVSYS."CODE{"/DVSYS,"CODE$"WHERE DVSYS."CODE$-1."1D#"CODE'$-1","ID#"
+
+   
